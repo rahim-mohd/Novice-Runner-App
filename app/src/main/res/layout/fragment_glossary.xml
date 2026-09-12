@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    FRAGMENT_GLOSSARY.XML - Searchable Running Glossary
+    =====================================================
+    This fragment displays a searchable list of running terms and definitions.
+    It features:
+    - A SearchView for real-time filtering of terms
+    - A RecyclerView that displays the list of terms
+
+    Users can search by term name, category, or definition.
+    The glossary is accessible from the Learn tab via the "View Full Glossary" button.
+-->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:padding="16dp">
+
+    <!-- Search Bar
+    Allows user to filter the glossary
+    The search query is passed to the TermAdapter Java for the filtering-->
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:queryHint="Search terms..."
+        app:iconifiedByDefault="false"
+        app:queryBackground="@android:color/transparent" />
+
+    <!-- RecyclerView for terms
+    Displays the list of running terms using a RecyclerView
+    Each item uses the layout defined in item_term.xml
+    RecyclerView is efficient because it only renders visible items-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTerms"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp" />
+
+</LinearLayout>

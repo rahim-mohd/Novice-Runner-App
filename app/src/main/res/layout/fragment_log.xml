@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    FRAGMENT_LOG.XML - Training Log (Log Tab)
+    ============================================
+    This fragment allows users to manually record their running activities.
+    It features:
+    - A multi-line text input field for entering run details
+    - A "Save Entry" button to store the log
+    - A scrollable display area showing all previously saved logs
+
+    Logs are stored locally using SharedPreferences with a date/time stamp.
+-->
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <!-- Page title
+    Main heading for the Training Log Screen -->
+    <TextView
+        android:id="@+id/tvLogTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Training Log"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Instruction Text
+    Brief instruction guiding user what to do -->
+    <TextView
+        android:id="@+id/tvLogInstructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Record your run details below"
+        android:textSize="14sp"
+        android:textColor="#666666"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvLogTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Log Entry input field
+    Multi-line text field for users to type their run detials -->
+    <EditText
+        android:id="@+id/etLogEntry"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="e.g., 30 min Zone 2, felt good"
+        android:inputType="textMultiLine"
+        android:minLines="4"
+        android:maxLines="6"
+        android:padding="12dp"
+        android:background="@android:drawable/editbox_background"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvLogInstructions"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Save Button
+    Primary action button to save entry -->
+    <Button
+        android:id="@+id/btnSaveLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save Entry"
+        android:textSize="16sp"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="12dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/etLogEntry"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Saved Lgos Section Title
+    Section heading for the saved logs will be displayed below -->
+    <TextView
+        android:id="@+id/tvSavedLogsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Previous Logs"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnSaveLog"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Saved Logs Display
+    ScrollView containing a TextView that displays all saved logs
+    This area expands to fill remaining space and scrolls when content overflows -->
+    <ScrollView
+        android:id="@+id/svLogs"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#F5F5F5"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvSavedLogsTitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- TextView inside ScrollView to display all saved logs
+        Content is set dynamically in LogFragment.Java-->
+        <TextView
+            android:id="@+id/tvSavedLogs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No logs yet. Start recording your runs!"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:lineSpacingExtra="4dp"/>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

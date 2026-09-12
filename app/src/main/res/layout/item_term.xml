@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    ITEM_TERM.XML - Individual Term Card (RecyclerView Item)
+    =========================================================
+    This layout defines a single card item used in the RecyclerView
+    within the Glossary fragment. Each card displays:
+    - The term name (bold, larger text)
+    - The category (coloured pill/chip)
+    - The definition (smaller text below)
+
+    This layout is inflated by the TermAdapter for each term in the list.
+-->
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginHorizontal="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp">
+
+    <!-- Card Content - LinearLayout Container
+    Vertical layout holding all card content-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Term Name
+        Displays the name of the running term-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvTerm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Term Name"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333333" />
+
+            <!-- Catergory Chip
+            Displays the term's category in a coloured chip
+            examples: "Aerobic", "pace" and etc -->
+            <TextView
+                android:id="@+id/tvCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:background="#2196F3"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <!-- Definition
+        Displays the full definition of the term
+        Appears below the term name and category-->
+        <TextView
+            android:id="@+id/tvDefinition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Definition goes here"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:layout_marginTop="8dp"
+            android:lineSpacingExtra="2dp" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

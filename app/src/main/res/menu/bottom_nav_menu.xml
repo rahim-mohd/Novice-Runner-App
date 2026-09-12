@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    BOTTOM_NAV_MENU.XML - Bottom Navigation Menu
+    =============================================
+    This menu resource defines the four tabs displayed in the
+    BottomNavigationView within MainActivity.
+
+    Each item represents a tab with:
+    - A unique ID (used for fragment switching in Java)
+    - An icon (from the drawable folder)
+    - A title (displayed below the icon)
+
+    Order of items determines the order of tabs (left to right).
+-->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Tab 1: Zones
+    The core feature of the app - Heart Rate Zone Calculator -->
+    <item
+        android:id="@+id/navigation_zones"
+        android:icon="@drawable/ic_zones"
+        android:title="Zones" />
+
+    <!-- Tab 2: Plan
+    Displays the weekly training plan based on the 80/20 polarised training-->
+    <item
+        android:id="@+id/navigation_plan"
+        android:icon="@drawable/ic_plan"
+        android:title="Plan" />
+
+    <!-- Tab 3: Log
+    Allows users to mannually record down their runs-->
+    <item
+        android:id="@+id/navigation_log"
+        android:icon="@drawable/ic_log"
+        android:title="Log" />
+
+    <!-- Tab 4: Learn
+    Education hub with zone guide and glossary-->
+    <item
+        android:id="@+id/navigation_learn"
+        android:icon="@drawable/ic_learn"
+        android:title="Learn" />
+
+</menu>

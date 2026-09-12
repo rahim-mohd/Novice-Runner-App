@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    FRAGMENT_LEARN.XML - Educational Zone Guide (Learn Tab)
+    ========================================================
+    This fragment provides educational content about heart rate zones.
+    It features:
+    - A comprehensive guide to all five heart rate zones with colour coding
+    - A beginner tip box
+    - A "View Full Glossary" button that navigates to the searchable glossary
+
+    This is the educational hub of the application.
+-->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FFFFFF"
+    android:fillViewport="true">
+
+    <!-- Constraint Layout (Container for all educational content -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Title
+        Main heading for the educational content-->
+        <TextView
+            android:id="@+id/tvLearnTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Running Zones Guide"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Subtitle
+        Brief explaination of why understanding zone matters-->
+        <TextView
+            android:id="@+id/tvLearnSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Understanding heart rate zones is key to training smarter, not harder."
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvLearnTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Beginner Tip Box
+         A highlighter tip box with practical advice for beginners-->
+        <TextView
+            android:id="@+id/tvLearnTip"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="💡 Beginner Tip: Start with Zones 1-2 for your first few weeks. Build your base before adding intensity. Most training should feel easy!"
+            android:textSize="15sp"
+            android:textColor="#FFFFFF"
+            android:padding="16dp"
+            android:background="#4CAF50"
+            android:backgroundTint="#4CAF50"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvLearnSubtitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Zone 1 - Recovery Zone (50-60% HRmax)-->
+        <TextView
+            android:id="@+id/tvZone1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="1. Recovery Zone (50-60% Max HR)\nVery easy, conversational pace"
+            android:textSize="16sp"
+            android:padding="16dp"
+            android:background="#E3F2FD"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvLearnTip"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Zone 2 Aerobic Zone (60-70% HRmax) -->
+        <TextView
+            android:id="@+id/tvZone2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="2. Aerobic Zone (60-70% Max HR)\nComfortable, can hold a conversation"
+            android:textSize="16sp"
+            android:padding="16dp"
+            android:background="#E8F5E9"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvZone1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Zone 3 - Tempo Zone (70-80% HRmax) -->
+        <TextView
+            android:id="@+id/tvZone3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="3. Tempo Zone (70-80% Max HR)\nModerate, can speak in short sentences"
+            android:textSize="16sp"
+            android:padding="16dp"
+            android:background="#FFF3E0"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvZone2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Zone 4 - Threshold Zone (80-90% HRmax) -->
+        <TextView
+            android:id="@+id/tvZone4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="4. Threshold Zone (80-90% Max HR)\nHard, breathing is deep and rhythmic"
+            android:textSize="16sp"
+            android:padding="16dp"
+            android:background="#FFEBEE"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvZone3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Zone 5 - Maximum Zone or VO2 Max (90-100% HRmax) -->
+        <TextView
+            android:id="@+id/tvZone5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="5. Maximum Zone (90-100% Max HR)\nAll-out effort, can only sustain briefly"
+            android:textSize="16sp"
+            android:padding="16dp"
+            android:background="#FFCDD2"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvZone4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Divider -->
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#E0E0E0"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvZone5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Glossary Section Title
+        Section heading for the glossary preview-->
+        <TextView
+            android:id="@+id/tvGlossaryTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📚 Running Glossary"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/divider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Glossary Subtitle
+        Brief description of the glossary section-->
+        <TextView
+            android:id="@+id/tvGlossarySubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Essential running terms every runner should know."
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:layout_marginTop="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvGlossaryTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- View Glossary Button
+        Navigates the user to the full searchable glossary-->
+        <Button
+            android:id="@+id/btnViewGlossary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Full Glossary"
+            android:textSize="16sp"
+            android:paddingHorizontal="32dp"
+            android:paddingVertical="12dp"
+            android:backgroundTint="#2196F3"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvGlossarySubtitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

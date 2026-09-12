@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    FRAGMENT_PLAN.XML - Weekly Training Plan (Plan Tab)
+    ====================================================
+    This fragment displays a weekly training schedule based on the
+    polarised (80/20) training model:
+    - 80% easy runs (Zone 2) for building aerobic base
+    - 20% hard efforts (Zone 4-5) for improving performance
+
+    Each day is colour-coded to indicate the type of activity:
+    - Green (#E8F5E9)  = Easy runs (Zone 2)
+    - Orange (#FFF3E0) = Rest days
+    - Red (#FFEBEE)    = Hard efforts (Intervals)
+    - Blue (#E3F2FD)   = Recovery / Zone 1
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <!-- Constraint Layout (Container for all plan items)
+    Using wrap_content height so the ScrollView handles scrolling -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Plan Title
+        Main heading for the weekly training plan-->
+        <TextView
+            android:id="@+id/tvPlanTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Weekly Training Plan"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Plan Subtitle
+        Explains the 80/20 rule to the user -->
+        <TextView
+            android:id="@+id/tvPlanSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Follow the 80/20 Rule: 80% easy runs (Zone 2), 20% hard efforts (Zone 4-5)"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvPlanTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Monday - Easy Run (Zone 2)
+        Green background indicates easy / aerobic activity-->
+        <TextView
+            android:id="@+id/tvMonday"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Monday: Zone 2 - 30 min easy run"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:background="#E8F5E9"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvPlanSubtitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Tuesday - Rest or Recovery (Zone 1)
+        Yellow-Orange background indicates rest / active recovery day-->
+        <TextView
+            android:id="@+id/tvTuesday"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Tuesday: Rest or Zone 1 - 20 min walk"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:background="#FFF3E0"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvMonday"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Wednesday - Easy Run (Zone 2)
+        Green Background indicates easy run / aerobic activity-->
+        <TextView
+            android:id="@+id/tvWednesday"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Wednesday: Zone 2 - 35 min easy run"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:background="#E8F5E9"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvTuesday"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Thursday - Rest
+        Yellow-orange background indicates rest day-->
+        <TextView
+            android:id="@+id/tvThursday"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Thursday: Rest"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:background="#FFF3E0"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvWednesday"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Friday - Intervals (Hard effort - Zone 4/5
+        Red background indicates high-intensity / hard effort
+        This is the "20%" part of the 80/20 Rule-->
+        <TextView
+            android:id="@+id/tvFriday"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Friday: Intervals - 2 min Zone 4 / 3 min Zone 2 x4"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:background="#FFEBEE"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvThursday"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Saturday - Recovery (Zone 1)
+        Blue background indicates recovery/ very easy activity-->
+        <TextView
+            android:id="@+id/tvSaturday"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Saturday: Zone 1 - 20 min recovery walk"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:background="#E3F2FD"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvFriday"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Sunday - Rest
+        Yellow-orange background indicates rest day -->
+        <TextView
+            android:id="@+id/tvSunday"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Sunday: Rest"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:background="#FFF3E0"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvSaturday"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

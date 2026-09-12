@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    MAIN_MENU.XML - Toolbar Overflow Menu
+    ======================================
+    This menu resource defines the options available in the toolbar's
+    overflow menu (the three-dot menu in the top-right corner).
+
+    Currently, it contains a single option:
+    - Logout: Clears the user session and returns to the login screen
+
+    The menu is inflated in MainActivity.java using onCreateOptionsMenu().
+-->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Logout Item
+    Allows the user to log out of the application-->
+    <item
+        android:id="@+id/action_logout"
+        android:title="Logout"
+        android:icon="@android:drawable/ic_menu_revert"
+        app:showAsAction="ifRoom" />
+
+</menu>
